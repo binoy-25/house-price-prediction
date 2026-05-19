@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>House Price Prediction</title>
+
+  <style>
+
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      font-family:Arial;
+    }
+
+    body{
+      background:#0f172a;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      height:100vh;
+    }
+
+    .container{
+      width:420px;
+      background:white;
+      padding:40px;
+      border-radius:20px;
+      box-shadow:0 10px 30px rgba(0,0,0,0.3);
+    }
+
+    h1{
+      text-align:center;
+      margin-bottom:30px;
+      color:#0f172a;
+    }
+
+    input{
+      width:100%;
+      padding:14px;
+      margin-bottom:18px;
+      border:1px solid #ccc;
+      border-radius:10px;
+      font-size:16px;
+    }
+
+    button{
+      width:100%;
+      padding:14px;
+      border:none;
+      background:#2563eb;
+      color:white;
+      border-radius:10px;
+      font-size:17px;
+      cursor:pointer;
+      transition:0.3s;
+    }
+
+    button:hover{
+      background:#1d4ed8;
+    }
+
+    .result{
+      margin-top:25px;
+      text-align:center;
+      background:#dbeafe;
+      padding:15px;
+      border-radius:10px;
+      color:#1e3a8a;
+      font-size:22px;
+      font-weight:bold;
+    }
+
+  </style>
+
+</head>
+<body>
+
+  <div class="container">
+
+    <h1>House Price Prediction</h1>
+
+    <form method="POST">
+
+      <input type="number" name="bedrooms" placeholder="Bedrooms" required>
+
+      <input type="number" name="bathrooms" placeholder="Bathrooms" required>
+
+      <input type="number" name="area" placeholder="Area (sq ft)" required>
+
+      <input type="number" name="parking" placeholder="Parking Spaces" required>
+
+      <input type="number" name="year" placeholder="Year Built" required>
+
+      <button type="submit">Predict Price</button>
+
+    </form>
+
+    {% if prediction != "" %}
+
+    <div class="result">
+      Predicted Price: ₹ {{ prediction }}
+    </div>
+
+    {% endif %}
+
+  </div>
+
+</body>
+</html>
